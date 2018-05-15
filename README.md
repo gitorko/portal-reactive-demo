@@ -36,5 +36,6 @@ spring-boot:run '-Dspring-boot.run.arguments=--spring.data.mongodb.host=172.29.1
 Future topics:
 1. back pressure
 2. hot cold stream.
+3. server sent event.
 
 ```
