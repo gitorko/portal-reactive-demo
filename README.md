@@ -23,11 +23,15 @@ import { HttpClientModule } from '@angular/common/http';
 spring-boot:run '-Dspring-boot.run.arguments=--spring.data.mongodb.host=172.29.160.33'
 
 
-
 1. Using spring init 
 2. Webflux
 3. JPA
 4. Clarity Seed project
 5. CORS (Cross-Origin Resource Sharing)
+
+
+Future topics:
+1. back pressure
+2. hot cold stream.
 
 ```
