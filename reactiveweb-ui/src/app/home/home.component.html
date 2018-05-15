@@ -1,0 +1,38 @@
+<p>{{welcomeMessage}}</p>
+
+<clr-datagrid>
+    <clr-dg-column>User ID</clr-dg-column>
+    <clr-dg-column>Name</clr-dg-column>
+    <clr-dg-column>Creation date</clr-dg-column>
+    <clr-dg-column>Favorite color</clr-dg-column>
+    <clr-dg-row *ngFor="let user of customers">
+        <clr-dg-cell>{{user.id}}</clr-dg-cell>
+        <clr-dg-cell>{{user.name}}</clr-dg-cell>
+        <clr-dg-cell>{{user.creation | date}}</clr-dg-cell>
+        <clr-dg-cell>{{user.color}}</clr-dg-cell>
+    </clr-dg-row>
+    <clr-dg-footer>{{customers.length}} users</clr-dg-footer>
+</clr-datagrid>
+
+<form>
+    <section class="form-block">
+        <label>Enter User</label>
+        <div class="form-group">
+            <label class="required">User Name</label>
+            <input [(ngModel)]="customer.name" name="name" type="text" id="requiredInput">
+        </div>
+        <div class="form-group">
+            <label for="creation">Creation</label>
+            <input [(ngModel)]="customer.creation" name="creation" type="date" id="creation" size="35">
+        </div>
+        <div class="form-group">
+            <label for="color">Color</label>
+            <select id="color" name="color" [(ngModel)]="customer.color">
+                <option>Red</option>
+                <option>Blue</option>
+                <option>Green</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="saveCustomer()">Save</button>
+    </section>
+</form>
