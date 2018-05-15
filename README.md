@@ -8,7 +8,7 @@ Proxy for angular
 
 import { Component, OnInit } from '@angular/core';
 import { CustomerService } from '../customer.service';
-import { Customer } from '../customer.model';
+import { Customer } from '../customer';
 import { Observable } from 'rxjs/Observable';
 import { Router } from '@angular/router';
 
