@@ -1,5 +1,6 @@
 package com.demo.reactiveweb;
 
+import java.time.Duration;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -101,8 +102,8 @@ class Initializer implements ApplicationRunner {
   @Override
   public void run(ApplicationArguments args) throws Exception {
     log.info("Initializing repo!");
-    Flux<String> names = Flux.just("arjun","vijay","shantanu");
-    Flux<String> colors = Flux.just("red","blue","green");
+    Flux<String> names = Flux.just("arjun","vijay","shantanu").delayElements(Duration.ofSeconds(30));
+    Flux<String> colors = Flux.just("red","blue","green").delayElements(Duration.ofSeconds(30));
     Flux<Customer> customers = Flux.zip(names,colors).map(tupple -> {
       return new Customer(null,tupple.getT1(),new Date(),tupple.getT2());
     });
