@@ -93,21 +93,22 @@ class CustomerRestController {
 
 @Component
 @AllArgsConstructor
+@Slf4j
 class Initializer implements ApplicationRunner {
 
   private final CustomerRepository repo;
 
   @Override
   public void run(ApplicationArguments args) throws Exception {
-    System.out.println("Initializing repo!");
+    log.info("Initializing repo!");
     Flux<String> names = Flux.just("arjun","vijay","shantanu");
     Flux<String> colors = Flux.just("red","blue","green");
     Flux<Customer> customers = Flux.zip(names,colors).map(tupple -> {
       return new Customer(null,tupple.getT1(),new Date(),tupple.getT2());
     });
 
-    repo.deleteAll().thenMany(customers.flatMap(customer -> repo.save(customer)).thenMany(repo.findAll())).subscribe(System.out::println);
-    System.out.println("Main thread done!");
+    repo.deleteAll().thenMany(customers.flatMap(repo::save).thenMany(repo.findAll())).subscribe(System.out::println);
+    log.info("Main thread done!");
   }
 }
 
