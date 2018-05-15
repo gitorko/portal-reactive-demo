@@ -7,6 +7,8 @@ Proxy for angular
 
 https://github.com/spring-projects/spring-boot/issues/9785
 
+docker run -p 27017:27017 -d mongo
+
 import { Component, OnInit } from '@angular/core';
 import { CustomerService } from '../customer.service';
 import { Customer } from '../customer';
