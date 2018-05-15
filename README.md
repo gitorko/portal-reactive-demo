@@ -1,3 +1,4 @@
+```
 Docker File Sharing:
 Set-NetConnectionProfile -interfacealias "vEthernet (DockerNAT)" -NetworkCategory Private
 
@@ -28,3 +29,5 @@ spring-boot:run '-Dspring-boot.run.arguments=--spring.data.mongodb.host=172.29.1
 3. JPA
 4. Clarity Seed project
 5. CORS (Cross-Origin Resource Sharing)
+
+```
