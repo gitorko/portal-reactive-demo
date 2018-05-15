@@ -5,6 +5,7 @@ Set-NetConnectionProfile -interfacealias "vEthernet (DockerNAT)" -NetworkCategor
 Proxy for angular
 --proxy-config proxy.config.json
 
+https://github.com/spring-projects/spring-boot/issues/9785
 
 import { Component, OnInit } from '@angular/core';
 import { CustomerService } from '../customer.service';
