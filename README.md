@@ -23,6 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 {useHash: true}
 
+spring.data.mongodb.host=localhost
+
 spring-boot:run '-Dspring-boot.run.arguments=--spring.data.mongodb.host=172.29.160.33'
 
 
