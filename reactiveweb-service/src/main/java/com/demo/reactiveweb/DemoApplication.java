@@ -2,6 +2,7 @@ package com.demo.reactiveweb;
 
 import java.time.Duration;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.ApplicationArguments;
@@ -32,6 +33,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
 import static org.springframework.web.reactive.function.server.RequestPredicates.GET;
 import static org.springframework.web.reactive.function.server.RouterFunctions.route;
 import static org.springframework.web.reactive.function.server.ServerResponse.ok;
@@ -89,6 +92,12 @@ class CustomerRestController {
   public void save(@RequestBody Customer customer) {
     log.info("save request: {}", customer);
     repo.save(customer).subscribe();
+  }
+
+  @GetMapping("/hello")
+  public Mono<String> hello() {
+    log.info("hello world request!");
+    return Mono.just("Hello World!");
   }
 }
 
