@@ -31,6 +31,12 @@ https://github.com/spring-projects/spring-boot/issues/9785
 If you want to pass properties during command line
 spring-boot:run '-Dspring-boot.run.arguments=--spring.data.mongodb.host=172.29.160.33'
 
+Docker Build:
+docker build --rm -f Dockerfile -t reactiveweb-service:latest .
+
+Docker Compose:
+docker-compose -f docker-compose.yml up -d --build
+
 Demo:
 1. Using spring init 
 2. Webflux
