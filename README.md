@@ -37,11 +37,12 @@ docker build --rm -f Dockerfile -t reactiveweb-service:latest .
 Docker Compose:
 docker-compose -f docker-compose.yml up -d --build
 
-Demo:
+Demo topics:
 1. Using spring init 
-2. Webflux
-3. JPA
-4. Clarity Seed project
+2. Comparison of tomcat vs node.js vs webflux.
+3. Introduciton to Spring Webflux
+4. Spring JPA
+4. Clarity UI
 5. CORS (Cross-Origin Resource Sharing)
 6. vscode themes & plugins
 
